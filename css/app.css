@@ -1,0 +1,267 @@
+* {
+  margin: 0 0;
+  padding: 0 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+body {
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ededed;
+}
+
+body #app header {
+  padding: 20px 0;
+  text-align: center;
+  background-color: #4a66c2;
+}
+
+body #app header h1 {
+  color: #fff;
+  line-height: 2;
+}
+
+body #app header h3 {
+  color: #fff;
+  line-height: 1.5;
+}
+
+body #app .juego {
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  display: block;
+  background-color: #fff;
+}
+
+body #app .juego h2 {
+  padding: 10px 0;
+  text-align: center;
+}
+
+body #app .juego_endGame {
+  margin: auto;
+  padding: 10px 0;
+  width: 80%;
+  text-align: center;
+}
+
+body #app .juego_endGame-win {
+  color: #25b12c;
+}
+
+body #app .juego_endGame-lose {
+  color: #cc1717;
+}
+
+body #app .juego_palabra {
+  margin: auto;
+  padding: 10px 0;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #app .juego_palabra span {
+  margin: 1px;
+  padding: 0px 0px;
+  text-align: center;
+  border: 2px solid #999;
+  border-radius: 5px;
+  line-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+body #app .juego_letras {
+  margin: auto;
+  padding: 10px 0;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  body #app .juego_letras {
+    width: 80%;
+  }
+}
+
+body #app .juego_letras button {
+  margin: 1px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  line-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+body #app .juego_letras button:hover {
+  background-color: #fff;
+  border-color: #0f87d6;
+  color: #555;
+  font-weight: 700;
+}
+
+body #app .juego_letras .rojo {
+  border-color: #cc1717;
+  background-color: #f57;
+  color: #fff;
+  font-weight: 700;
+}
+
+body #app .juego_letras .verde {
+  border-color: #25b12c;
+  background-color: #55ff7a;
+  color: #fff;
+  font-weight: 700;
+}
+
+body #app .juego_letras p {
+  padding: 5px;
+  width: 100%;
+}
+
+body #app .juego_letras p span {
+  padding: 5px;
+  border: 2px solid #cc1717;
+  border-radius: 5px;
+  color: #555;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+body #app .juego_btn-contadores {
+  margin: auto;
+  padding: 10px 0;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1023px) {
+  body #app .juego_btn-contadores {
+    width: 80%;
+  }
+}
+
+body #app .juego_btn-contadores-contadores {
+  margin: auto;
+  padding: 10px 0;
+}
+
+body #app .juego_btn-contadores-contadores p {
+  line-height: 2;
+  font-weight: 700;
+}
+
+body #app .juego_btn-contadores-contadores .number-rojo {
+  line-height: 3;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #cc1717;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+body #app .juego_btn-contadores-contadores .number-verde {
+  line-height: 3;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #25b12c;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+body #app .juego_btn-contadores-btnJugar {
+  margin: auto;
+  padding: 10px 0;
+}
+
+body #app .juego_btn-contadores-btnJugar a button {
+  margin: auto;
+  padding: 10px 20px;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ededed;
+  color: #555;
+  width: 100px;
+}
+
+body #app .juego_btn-contadores-btnJugar a button:hover {
+  background-color: #fff;
+  border-color: #0f87d6;
+  color: #555;
+  font-weight: 700;
+}
+
+body #app footer {
+  line-height: 6;
+  text-align: center;
+  background-color: #acbacb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #app footer img {
+  margin-right: 10px;
+  width: 35px;
+  height: auto;
+}
+
+body #app footer a {
+  color: #fff;
+}
+
+body #app footer a:hover {
+  color: #f57;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=app.css.map */
