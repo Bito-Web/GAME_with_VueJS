@@ -43,6 +43,12 @@ body #app .juego {
   background-color: #fff;
 }
 
+@media (max-width: 1023px) {
+  body #app .juego {
+    width: 100%;
+  }
+}
+
 body #app .juego h2 {
   padding: 10px 0;
   text-align: center;
@@ -104,7 +110,7 @@ body #app .juego_letras {
 
 @media (max-width: 1023px) {
   body #app .juego_letras {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -175,7 +181,7 @@ body #app .juego_btn-contadores {
 
 @media (max-width: 1023px) {
   body #app .juego_btn-contadores {
-    width: 80%;
+    width: 100%;
   }
 }
 

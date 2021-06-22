@@ -13,7 +13,7 @@
          <meta name='robots' content='index, follow'/>
 
          <!-- TITLE -->
-         <title></title>
+         <title>Juegos con VueJS</title>
 
          <!-- CSS -->
          <link rel='icon' type='img/png' href=''>
@@ -48,9 +48,6 @@
                <div v-if="lose" class="juego_letras">
                   <p>La palabra correcta era: <span>"{{palabra_generada}}"</span></p>
                </div>
-               <!-- <div v-if="juego">
-                  <p></p>
-               </div> -->
 
                <div class="juego_btn-contadores">
 
@@ -64,6 +61,14 @@
                      <p>Errores:</p>
                      <p class="number-rojo">{{contador_errores}}</p>
                   </div>
+
+                  <div class="juego_btn-contadores-contadores">
+                     <p>Ganados:</p>
+                     <p class="number-verde">{{win_contador}}</p>
+                     <p>Perdidos:</p>
+                     <p class="number-rojo">{{lose_contador}}</p>
+                  </div>
+
                </div>
             </div>
 

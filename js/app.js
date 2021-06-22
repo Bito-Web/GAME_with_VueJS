@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function(name) {
-   // let nombre = prompt('Escribe tu nombre');
+// document.addEventListener('DOMContentLoaded', function(name) {
+//    let nombre = prompt('Escribe tu nombre');
 
-   // if (nombre !== '') {
-   //    alert('Bienvenido ' + nombre + ' a mi primer juego con Javascript!!!')
-   // }else{
-   //    alert('Por favor, debes escribir tu nombre...')
-   // }
+//    if (nombre !== '') {
+//       alert('Bienvenido ' + nombre + ' a mi primer juego con Javascript!!!')
+//    }else{
+//       alert('Por favor, debes escribir tu nombre...')
+//    }
 
-}, false);
+// }, false);
 
 const App = new Vue({
    el: '#app',
@@ -15,14 +15,14 @@ const App = new Vue({
    {
       header:
       {
-         title: 'Juego Web con HTML5 y Javascript',
+         title: 'Juegos Web con HTML5 y Javascript',
          subtitle: 'Canal de youtube de "Sistemas y Micros"'
       },
       footer:
       {
          link:
          {
-            title: 'Referencia',
+            title: 'Referencia "Adivina la Fruta"',
             href: 'https://www.youtube.com/watch?v=HSkl-A7QSrs'
          },
          img:
@@ -32,11 +32,13 @@ const App = new Vue({
             src: 'https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-5-2.png'
          }
       },
-      juego: true,
+      juego: false,
       win: false,
       lose: false,
       contador_aciertos: 0,
       contador_errores: 0,
+      win_contador: 0,
+      lose_contador: 0,
       aleatorio: 0,
       palabra_escrita: [],
       botones: [],
@@ -46,29 +48,36 @@ const App = new Vue({
       [
          'manzana',
          'pera',
-         'cambur',
+         'banana',
          'naranja',
          'mandarina',
          'durazno',
          'mora',
-         'piña',
+         'anana',
          'kiwi',
-         'toronja',
+         'pomelo',
          'frambuesa',
          'melocoton',
          'cereza',
-         'fresa',
+         'frutilla',
          'arandano',
          'melon',
-         'lechoza',
+         'papaya',
          'platano',
          'tamarindo',
          'mango',
          'limon',
+         'palta',
+         'tomate',
+         'pepino',
+         'zapallito',
+         'zapallo',
+         'berenjena',
+         'morron',
          'ciruela',
-         'parchita',
+         'maracuya',
          'uva',
-         'patilla',
+         'sandia',
          'coco'
       ]
    },
@@ -95,29 +104,36 @@ const App = new Vue({
             this.botones[posicion] = true;
             let flat = 0;
             
-            for (i = 0; i <= this.palabra_generada.length; i++) {
+            for (i = 0; i <= this.palabra_generada.length; i++) {    
                if (caracter.toLowerCase() === this.palabra_generada[i]) {
                   this.palabra_escrita[i] = caracter;
                   this.contador_aciertos++;
                   flat++;
-               }   
+               }     
             }
+
             if (flat == 0) {
                this.contador_errores++;
                this.color_botones[posicion] = 'rojo';
             }else{
                this.color_botones[posicion] = 'verde';
             }
+
             if (this.contador_aciertos === this.palabra_generada.length) {
                this.win = true;
                this.juego = false;
+               this.win_contador++;
             }
+
             if (this.contador_errores === 5) {
                this.lose = true;
                this.juego = false;
+               this.lose_contador++;
             }
+
             console.log('Generada: '+ this.palabra_generada.length);
             console.log('Escrita: '+ this.palabra_escrita.length);
+            console.log('Ganado: '+ win_contador + ' Perdido: ' + lose_contador);
          }
       },
    },
