@@ -175,7 +175,7 @@ const App = new Vue({
                this.contador_errores = 0;
             }
 
-            console.log('Generada: '+ this.palabra_generada);
+            // console.log('Generada: '+ this.palabra_generada);
             // console.log('Escrita: '+ this.palabra_escrita.length);
             // console.log('Ganado: '+ this.win_contador + ' Perdido: ' + this.lose_contador);
          }
