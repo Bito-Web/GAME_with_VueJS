@@ -18,6 +18,7 @@
          <!-- CSS -->
          <link rel='icon' type='img/png' href=''>
          <link rel='stylesheet' type='text/css' href='./css/app.css'>
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       </head>
       <body>
 
@@ -30,12 +31,7 @@
             <div class="juego" id="juego">
 
                <h2>Juego: "Adivina la Fruta"</h2>
-
-               <div v-if="juego == false" class="juego_endGame">
-                  <h3 class="juego_endGame-win" v-if="win">¡¡¡Felicitaciones, completaste la palabra!!!</h3>
-                  <h4 class="juego_endGame-win" v-if="win && contador_errores === 0">Sin errores XD</h4>
-                  <h3 class="juego_endGame-lose" v-if="lose">¡¡¡Lo sentimos, no completaste la palabra!!!</h3>
-               </div>
+               <a v-if="juego === false" href="javascript:void(0)" title="Ver Reglas"><p @click="reglas()">Ver Reglas</p></a>
 
                <div class="juego_palabra">
                   <span v-for="palabra in palabra_escrita">{{palabra}}</span>

@@ -1,14 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function(name) {
-//    let nombre = prompt('Escribe tu nombre');
-
-//    if (nombre !== '') {
-//       alert('Bienvenido ' + nombre + ' a mi primer juego con Javascript!!!')
-//    }else{
-//       alert('Por favor, debes escribir tu nombre...')
-//    }
-
-// }, false);
-
 const App = new Vue({
    el: '#app',
    data:
@@ -137,19 +126,67 @@ const App = new Vue({
                this.win = true;
                this.juego = false;
                this.win_contador++;
+               if (this.contador_errores === 0) {
+                  this.win_contador++
+                  swal({
+                     title: "¡Genial!",
+                     text: "Sin errores, has ganado un punto extra +1 en Ganados",
+                     icon: "success",
+                  });
+               }
             }
 
             if (this.contador_errores === 5) {
                this.lose = true;
                this.juego = false;
                this.lose_contador++;
+               if (this.contador_aciertos === 0) {
+                  this.lose_contador++;
+                  swal({
+                     title: "¡Ups!",
+                     text: "Sin aciertos, penalizado con un punto extra +1 en Perdidos",
+                     icon: "error",
+                  });
+               }
             }
 
-            console.log('Generada: '+ this.palabra_generada.length);
-            console.log('Escrita: '+ this.palabra_escrita.length);
-            console.log('Ganado: '+ win_contador + ' Perdido: ' + lose_contador);
+            if (this.win_contador >= 5) {
+               swal({
+                  title: "¡Felicidades!",
+                  text: "Has ganado",
+                  icon: "success",
+               });
+               this.juego = false;
+               this.win_contador = 0;
+               this.lose_contador = 0;
+               this.contador_aciertos = 0;
+               this.contador_errores = 0;
+            }
+            if (this.lose_contador >= 5) {
+               swal({
+                  title: "¡Lo sentimos!",
+                  text: "Has perdido, intenta de nuevo...",
+                  icon: "error",
+               });
+               this.juego = false;
+               this.win_contador = 0;
+               this.lose_contador = 0;
+               this.contador_aciertos = 0;
+               this.contador_errores = 0;
+            }
+
+            console.log('Generada: '+ this.palabra_generada);
+            // console.log('Escrita: '+ this.palabra_escrita.length);
+            // console.log('Ganado: '+ this.win_contador + ' Perdido: ' + this.lose_contador);
          }
       },
+      reglas: function() {
+         swal({
+            title: "Reglas del Juego",
+            text: "1- Adivina 10 frutas\n2- Tienes un máximo de 5 partidos Perdidos\n3- Por cada ganado sin errores duplicas los puntos\n4- Por cada perdido sin acierto duplicas los puntos\n\n¡Mucha suerte!",
+            icon: "warning"
+         });
+      }
    },
    computed:
    {

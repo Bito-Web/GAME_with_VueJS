@@ -41,6 +41,17 @@ body {
             padding: 10px 0;
             text-align: center;
          }
+         a {
+            p {
+               text-align: center;
+               text-decoration: underline;
+               color: #0f87d6;
+               &:hover {
+                  text-decoration: none;
+                  color: #555;
+               }
+            }
+         }
          &_endGame {
             margin: auto;
             padding: 10px 0;

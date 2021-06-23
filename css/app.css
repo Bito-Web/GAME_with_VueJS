@@ -54,10 +54,21 @@ body #app .juego h2 {
   text-align: center;
 }
 
+body #app .juego a p {
+  text-align: center;
+  text-decoration: underline;
+  color: #0f87d6;
+}
+
+body #app .juego a p:hover {
+  text-decoration: none;
+  color: #555;
+}
+
 body #app .juego_endGame {
   margin: auto;
   padding: 10px 0;
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
