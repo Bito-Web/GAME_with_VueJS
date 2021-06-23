@@ -150,7 +150,7 @@ const App = new Vue({
                }
             }
 
-            if (this.win_contador >= 5) {
+            if (this.win_contador >= 10) {
                swal({
                   title: "¡Felicidades!",
                   text: "Has ganado",
