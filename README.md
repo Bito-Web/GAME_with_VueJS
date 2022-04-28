@@ -1,2 +1,2 @@
 # JUEGO-con-VueJS
-Juegos de palara y adivinanzas
+Juegos de palabras y adivinanzas
